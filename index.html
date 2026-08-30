@@ -3,45 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reaction Diffusion Systems</title>
+<title>Turing Instability</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Garry Scott Reaction Diffusion system.</h1>
+    <h1>When Diﬀusion Creates Patterns</h1>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+
+    <script async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
   </header>
 
-  <main>
-    <p class="intro">
-      Example of Reaction Diffusion system where one can see pattern formation like stipes seen in Tiger, Geraff etc. 
-    </p>
-    <h1>My Video</h1>
-  
-    <!-- The 'controls' attribute is what adds the play, pause, and volume buttons automatically! -->
-    <video width="300" controls>
-      <source src="Animation_F_0.025_K_0.06.mp4" type="video/mp4">
-      <!-- This text only shows up if the browser is too old to support HTML5 video -->
-      Your browser does not support the video tag.
-    </video>
+  <section class="video-section">
 
-    <video width="300" controls>
-      <source src="Animation_F_0.04_K_0.06.mp4" type="video/mp4">
-      <!-- This text only shows up if the browser is too old to support HTML5 video -->
-      Your browser does not support the video tag.
-    </video>
+    <!-- LEFT SIDE -->
+    <div class="video-description">
+        <h1>
+          Reactions Diffusion Systems.
+        </h1>
+        <p >
+        One of the simplest examples of the where one can see turing instabilities are reaciton diffusion systems.Reaction Diffusion systems as the name suggests are systems where chemicals with different diffusion coefficients diffuse and react chemically. The dynamical equations of motion of reaction diffusion systems are usually of the form given below. 
+        </p>
+        <p>
+          $$\frac{\partial U_{i}}{\partial t} = D_i\nabla^2 U_{i} + f_i(U_{j})$$
+        </p>
+        <p>
+          Where $i$ is the $i$th of chemical in the system, $D_i$ is the diffusion coefficient of the system and $f_i$ are the non-linear couplings which denotes reactions term in the system. Typically such non linear systems are studies the tools of linear stability analysis where first we look at the homogeneous steady state of the system and then studying the systems behaviour as how the perturbations grows / decays as we vary system parameters to look for the instability. 
+        </p>
+        <p >
+        One of the simplest example of the reaction-diffusion system is a two chemical, Gray-Scott reaction-diffusion system. The Dynamical equation of motion is given by.  
+        </p>
 
-    <video width="300" controls>
-      <source src="Animation_F_0.0246_K_0.05538.mp4" type="video/mp4">
-      <!-- This text only shows up if the browser is too old to support HTML5 video -->
-      Your browser does not support the video tag.
-    </video>
+        <p>
+          \begin{align}
+          \partial_t U = D_{u}\nabla^2 U - UV^2 + F(1-U) \\
+          \partial_t v = D_{v}\nabla^2 v + UV^2 - (F+K)V    
+          \end{align}
+        </p>
 
-  </main>
+        We have numerically integrated the system with periodic Boundary conditions With $D_u = 2 \times 10^{-5}$ and $D_v = 10^{-5} $, $N\times N = 256 \times 256$ and $L \times L = 2.5 \times 2.5$ and $dt = 1.0$. Initially, the entire system was placed in the trivial state (U = 1,V = 0). The 20 by 20 mesh point area located symmetrically about the center of the grid was then perturbed to (U = 1/2,V = 1/4). These conditions were then perturbed with ± 1% random noise in order to break the square symmetry.
 
-  <footer>
-    <p> O' Captain, My' Captain</p>
-  </footer>
+        <p>
+          The videos on the right hand side panel shows as we vary $K$ and $F$ We get different patterns in the system even though all of them share same initial conditions. One can see we get different type of organic like structures which are purely from mathematic but can be seen in cell divisions, Mold slime growth and stripes in sands etc.
+        </p>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="videos">
+
+        <div class="video-box">
+            <video width="300" controls>
+                <source src="videos/Animation_F_0.025_K_0.06.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div class="video-box">
+            <video width="300" controls>
+                <source src="videos/Animation_F_0.04_K_0.06.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div class="video-box">
+            <video width="300" controls>
+                <source src="videos/Animation_F_0.0246_K_0.05538.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+    </div>
+
+</section>
 
 </body>
+</body>
+<footer>
+    <p> O' Captain, My' Captain</p>
+</footer>
 </html>

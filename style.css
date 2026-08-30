@@ -98,6 +98,30 @@ button:hover {
   margin-top: 1rem;
 }
 
+.video-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+}
+
+.video-description {
+    flex: 1;
+    padding: 10px;
+}
+
+.video-container {
+    flex: 1;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
 footer {
   margin-top: auto;
   padding: 1rem;
